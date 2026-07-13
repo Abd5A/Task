@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank of Qasion</title>
+</head>
+<body>
+  <h1>Open the console</h1>
+  <script>
+    var user = 
+      {
+        name: "Abdullah",
+        balance: 1000,
+      }
+    
+      function deposit(amount) {
+        user.balance += amount;
+        console.log(`Deposit successful! New balance: ${user.balance}`);
+      }
+
+      function withdraw(amount) {
+        if (amount <= user.balance) {
+          user.balance -= amount;
+          console.log(`Withdrawal successful! New balance: ${user.balance}`);
+        } else {
+          console.log("Transaction Denied: Insufficient Funds");
+        }
+      }
+
+  </script>
+</body>
+</html>
