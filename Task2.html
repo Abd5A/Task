@@ -8,15 +8,18 @@
 <body>
   <h1>Open the console</h1>
   <script>
-    var user = 
-      {
-        name: "Abdullah",
-        balance: 1000,
+    var user = JSON.parse(localStorage.getItem("user")) || {
+      name: "Abdullah",
+      balance: 0,
+    };
+      function saveData() {
+      localStorage.setItem("user", JSON.stringify(user));
       }
-    
+
       function deposit(amount) {
         user.balance += amount;
         console.log(`Deposit successful! New balance: ${user.balance}`);
+        saveData();
       }
 
       function withdraw(amount) {
@@ -26,6 +29,7 @@
         } else {
           console.log("Transaction Denied: Insufficient Funds");
         }
+        saveData();
       }
 
   </script>
